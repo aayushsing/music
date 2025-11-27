@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Priyank Krishna | Indian Classical Saxophonist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Official website of Priyank Krishna – Indian Classical Saxophonist and Bamboo Flute (Bansuri) player. Biography, achievements, concerts, media reviews, events, gallery and contact."
+  />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --text: #f5f5f7;
+      --muted: #a7b0c4;
+      --accent: #f6b65b;
+      --accent-soft: rgba(246, 182, 91, 0.16);
+      --accent2: #37e0ff;
+      --accent2-soft: rgba(55, 224, 255, 0.16);
+      --card: #0b0f1a;
+      --border-soft: rgba(255, 255, 255, 0.06);
+      --radius-lg: 24px;
+      --shadow-3d: 0 30px 60px rgba(0, 0, 0, 0.7);
+      --transition-fast: 220ms ease-out;
+      --transition-slow: 420ms cubic-bezier(0.21, 0.82, 0.25, 1);
+      --max-width: 1140px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #12172c 0, #050816 55%, #02030a 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    .hero-title,
+    .section-title {
+      font-family: "Cormorant Garamond", "Times New Roman", serif;
+      letter-spacing: 0.04em;
+    }
+
+    .page-wrapper {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .page-wrapper::before {
+      content: "";
+      position: fixed;
+      inset: -40vh -40vw auto auto;
+      background:
+        radial-gradient(circle at top left, rgba(55, 224, 255, 0.14), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(246, 182, 91, 0.14), transparent 60%);
+      opacity: 0.8;
+      z-index: -3;
+      pointer-events: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.4rem;
+    }
+
+    section {
+      padding: 4.5rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 2.8rem;
+      text-align: left;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      color: var(--accent2);
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 3vw, 2.3rem);
+      font-weight: 600;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 540px;
+      margin-top: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .card-3d {
+      background: radial-gradient(circle at top left, #161a2d 0, #050816 58%);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-3d);
+      position: relative;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transform: perspective(1100px) translate3d(0, 0, 0);
+      transition: transform var(--transition-slow), box-shadow var(--transition-slow),
+        border-color var(--transition-slow), background 380ms ease-out;
+    }
+
+    .card-3d::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 0, rgba(55, 224, 255, 0.12) 0, transparent 55%),
+        radial-gradient(circle at 90% 100%, rgba(246, 182, 91, 0.15) 0, transparent 55%);
+      opacity: 0;
+      transition: opacity var(--transition-slow);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .card-3d:hover {
+      transform: perspective(1100px) rotateX(6deg) rotateY(-8deg) translate3d(0, -6px, 18px);
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.88);
+      border-color: rgba(246, 182, 91, 0.45);
+      background: radial-gradient(circle at top left, #1b2340 0, #050816 60%);
+    }
+
+    .card-3d:hover::before {
+      opacity: 1;
+    }
+
+    /* INTRO SPLASH */
+
+    .intro-splash {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 1.4rem;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top, rgba(246, 182, 91, 0.1), transparent 55%),
+        radial-gradient(circle at bottom, rgba(55, 224, 255, 0.08), transparent 55%),
+        #050816;
+    }
+
+    .intro-inner {
+      max-width: 720px;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 1.2s ease-out forwards;
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    .intro-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.75rem;
+      color: var(--accent2);
+      margin-bottom: 0.7rem;
+      font-weight: 600;
+    }
+
+    .intro-title {
+      font-size: clamp(3rem, 5vw, 3.8rem);
+      line-height: 1.02;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(120deg, #ffffff, #f6e7d4, #f6b65b);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 18px 45px rgba(0, 0, 0, 0.95);
+    }
+
+    .intro-subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 1.7rem;
+    }
+
+    .intro-divider {
+      width: 80px;
+      height: 1px;
+      margin: 0 auto 1.7rem;
+      background: linear-gradient(to right, transparent, var(--accent), transparent);
+      opacity: 0.9;
+    }
+
+    .intro-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.78rem 1.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: radial-gradient(circle at top left, rgba(246, 182, 91, 0.25), #050816 80%);
+      text-decoration: none;
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+        background var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .intro-cta:hover {
+      transform: translateY(-2px) translateZ(12px);
+      border-color: rgba(246, 182, 91, 0.9);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.88);
+      background: radial-gradient(circle at top left, rgba(246, 182, 91, 0.35), #050816 80%);
+    }
+
+    .intro-cta-icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 1px solid rgba(5, 8, 22, 0.7);
+      background: rgba(255, 255, 255, 0.95);
+      display: grid;
+      place-items: center;
+      font-size: 0.7rem;
+      color: #050816;
+    }
+
+    .intro-orbit {
+      position: absolute;
+      inset: -10%;
+      background:
+        radial-gradient(circle at 5% 20%, rgba(55, 224, 255, 0.18), transparent 60%),
+        radial-gradient(circle at 95% 80%, rgba(246, 182, 91, 0.14), transparent 60%);
+      opacity: 0.65;
+      pointer-events: none;
+      filter: blur(2px);
+      animation: slowPulse 12s ease-in-out infinite alternate;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      left: 50%;
+      bottom: 40px;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .scroll-indicator span {
+      margin-bottom: 0.4rem;
+    }
+
+    .scroll-mouse {
+      width: 22px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 6px;
+      overflow: hidden;
+    }
+
+    .scroll-wheel {
+      width: 4px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      animation: scrollWheel 1.6s ease-in-out infinite;
+    }
+
+    @keyframes scrollWheel {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(10px); opacity: 0; }
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slowPulse {
+      0% { opacity: 0.4; transform: scale(1); }
+      100% { opacity: 0.8; transform: scale(1.05); }
+    }
+
+    /* NAVBAR + MOBILE MENU */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 8, 22, 0.96),
+        rgba(5, 8, 22, 0.78),
+        transparent
+      );
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.75rem 1.4rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: radial-gradient(circle at 30% 0, #f6b65b 0, #ff7c4a 45%, #9d3fff 80%);
+      display: grid;
+      place-items: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #050816;
+      box-shadow: 0 0 0 1px rgba(5, 8, 22, 0.6), 0 14px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    .brand-text-title {
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    .brand-text-sub {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.4rem;
+      font-size: 0.88rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--muted);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
+      font-size: 0.7rem;
+      padding-bottom: 0.25rem;
+      transition: color var(--transition-fast);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 999px;
+      transition: width var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hamburger icon */
+    .hamburger {
+      display: none;
+      width: 26px;
+      height: 20px;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 2px;
+      width: 100%;
+      background: var(--text);
+      border-radius: 999px;
+      transition: 0.3s;
+    }
+
+    /* Mobile menu panel */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: rgba(5, 8, 22, 0.98);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.6rem 1.4rem 1rem;
+    }
+
+    .mobile-menu a {
+      padding: 0.6rem 0;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-menu.mobile-open {
+      display: flex;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2.8rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.2rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 224, 255, 0.4);
+      background: radial-gradient(circle at top left, rgba(55, 224, 255, 0.16), transparent 55%);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent2);
+      margin-bottom: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero-kicker-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent2);
+      box-shadow: 0 0 12px rgba(55, 224, 255, 0.9);
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-gradient-text {
+      background: linear-gradient(120deg, #fff, #e8f5ff, #f6b65b);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-bottom: 2.3rem;
+    }
+
+    .meta-pill {
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(10, 16, 35, 0.9);
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .meta-pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(246, 182, 91, 0.9);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.78rem 1.35rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.86rem;
+      text-decoration: none;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+        background 240ms ease-out, color 240ms ease-out;
+      will-change: transform, box-shadow;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, #f6b65b, #ff7c4a, #ff4f7a);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.65);
+      color: #050816;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px) translateZ(10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      color: var(--text);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(10, 16, 40, 0.95);
+      transform: translateY(-2px) translateZ(10px);
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    .btn-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(5, 8, 22, 0.35);
+      background: rgba(255, 255, 255, 0.9);
+      display: grid;
+      place-items: center;
+      font-size: 0.7rem;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 260px;
+    }
+
+    .hero-orbit {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      pointer-events: none;
+    }
+
+    .hero-orbit::before {
+      content: "";
+      width: 290px;
+      height: 290px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 255, 255, 0.16);
+      box-shadow: 0 0 60px rgba(55, 224, 255, 0.12);
+    }
+
+    .hero-orbit::after {
+      content: "";
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      border: 1px solid rgba(8, 20, 60, 0.8);
+      box-shadow: 0 0 110px rgba(0, 0, 0, 0.9);
+    }
+
+    .hero-photo-card {
+      position: relative;
+      width: min(320px, 80vw);
+      aspect-ratio: 4 / 5;
+      border-radius: 28px;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transform: perspective(1000px) rotateY(-13deg) rotateX(10deg) translateY(8px);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.9);
+      background: radial-gradient(circle at top left, #f6b65b 0, #9e3fff 40%, #050816 100%);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .hero-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(5, 8, 22, 0.85), transparent 40%);
+    }
+
+    .hero-photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-tag {
+      position: absolute;
+      left: 10%;
+      bottom: 10%;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: rgba(5, 8, 22, 0.86);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #f6f7ff;
+    }
+
+    .hero-tag span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .hero-floating-pill {
+      position: absolute;
+      right: 6%;
+      top: 12%;
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 224, 255, 0.65);
+      background: rgba(10, 18, 40, 0.95);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--accent2);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+      animation: float 5.4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate3d(0, 0, 0); }
+      50% { transform: translate3d(0, -10px, 0); }
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      gap: 2.4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .about-text {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .about-text p + p {
+      margin-top: 0.75rem;
+    }
+
+    .about-highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 1.8rem;
+    }
+
+    .about-stat {
+      padding: 0.85rem 1rem;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: radial-gradient(circle at top left, rgba(246, 182, 91, 0.12), transparent 70%);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .about-stat strong {
+      display: block;
+      font-size: 1.2rem;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    /* ACHIEVEMENTS */
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .achievements-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .achievement-list {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .achievement-list li {
+      position: relative;
+      padding-left: 1.4rem;
+    }
+
+    .achievement-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: linear-gradient(120deg, var(--accent2), var(--accent));
+    }
+
+    .achievement-highlight {
+      padding: 1.4rem 1.5rem;
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top left, var(--accent-soft), transparent 60%);
+      border: 1px solid var(--border-soft);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .achievement-highlight strong {
+      display: block;
+      color: var(--text);
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    /* TOURS */
+
+    .tours-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+      gap: 2.2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .tours-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .tour-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .tour-tag {
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: radial-gradient(circle at top left, rgba(55, 224, 255, 0.16), #050816 70%);
+      font-size: 0.78rem;
+      color: var(--muted);
+      transform-style: preserve-3d;
+      transform: perspective(800px) translate3d(0, 0, 0);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+        border-color var(--transition-fast), background var(--transition-fast);
+    }
+
+    .tour-tag:hover {
+      transform: perspective(800px) translate3d(0, -3px, 10px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.8);
+      border-color: rgba(246, 182, 91, 0.75);
+      color: var(--text);
+    }
+
+    .tour-card {
+      padding: 1.35rem 1.4rem;
+    }
+
+    .tour-card h4 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    .tour-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* EVENTS */
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .event-card {
+      padding: 1.3rem 1.2rem;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: radial-gradient(circle at top left, rgba(246, 182, 91, 0.16), #050816 65%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .event-date {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent2);
+      margin-bottom: 0.35rem;
+      font-weight: 600;
+    }
+
+    .event-title {
+      font-size: 0.98rem;
+      font-weight: 500;
+      margin-bottom: 0.1rem;
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 0.06em;
+    }
+
+    .event-venue {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .event-meta-line {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .event-status {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      background: rgba(5, 8, 22, 0.92);
+      border: 1px solid rgba(55, 224, 255, 0.9);
+      color: var(--accent2);
+    }
+
+    /* MEDIA & REVIEWS */
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      gap: 2.4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .media-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .press-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .press-pill {
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(5, 8, 22, 0.9);
+    }
+
+    .review-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .review-card {
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 1.1rem;
+      background: radial-gradient(circle at top left, rgba(55, 224, 255, 0.16), #050816 70%);
+      font-size: 0.9rem;
+      color: var(--muted);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .review-quote {
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .review-source {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent2);
+    }
+
+    .review-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .media-card {
+      padding: 1.4rem 1.4rem;
+    }
+
+    /* MUSIC */
+
+    .audio-wrapper {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .audio-wrapper {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .audio-description {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .audio-player-card {
+      padding: 1.3rem 1.4rem;
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .audio-track {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 0.4rem;
+      filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.8));
+    }
+
+    /* GALLERY */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+
+    .photo-frame {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: radial-gradient(circle at top left, rgba(246, 182, 91, 0.25), #050816 70%);
+      aspect-ratio: 4 / 3;
+      transform-style: preserve-3d;
+      transform: perspective(900px) translateZ(0);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+        border-color var(--transition-fast);
+    }
+
+    .photo-frame:hover {
+      transform: perspective(900px) rotateX(6deg) rotateY(-8deg) translate3d(0, -6px, 18px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9);
+      border-color: rgba(246, 182, 91, 0.7);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.5rem 0.7rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      background: linear-gradient(to top, rgba(5, 8, 22, 0.92), transparent);
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .contact-details {
+      font-size: 0.9rem;
+      color: var(--muted);
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .contact-details strong {
+      color: var(--text);
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-details a {
+      color: var(--accent2);
+      text-decoration: none;
+    }
+
+    .contact-details a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-card {
+      padding: 1.6rem 1.5rem;
+    }
+
+    .input-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .field {
+      flex: 1 1 150px;
+      display: grid;
+      gap: 0.25rem;
+      font-size: 0.8rem;
+    }
+
+    label {
+      color: var(--muted);
+    }
+
+    input,
+    textarea {
+      background: rgba(5, 8, 22, 0.9);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 0.6rem 0.75rem;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.86rem;
+      outline: none;
+      transition: border-color 180ms ease-out, box-shadow 180ms ease-out,
+        background 180ms ease-out;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(246, 182, 91, 0.9);
+      box-shadow: 0 0 0 1px rgba(246, 182, 91, 0.7);
+      background: #050818;
+    }
+
+    .contact-card button {
+      margin-top: 0.4rem;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1.5rem 0 2rem;
+      margin-top: 2rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+      background: radial-gradient(circle at top, rgba(55, 224, 255, 0.12), transparent 55%);
+    }
+
+    footer a {
+      color: var(--accent2);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    }
+
+    /* FLOATING MUSIC ICONS BACKGROUND */
+
+    .floating-notes {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    .floating-notes span {
+      position: absolute;
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.18);
+      animation: floatNote 18s linear infinite;
+      filter: drop-shadow(0 0 6px rgba(0,0,0,0.7));
+    }
+
+    .floating-notes span:nth-child(1) { top: 5%; left: 10%; animation-duration: 22s; }
+    .floating-notes span:nth-child(2) { top: 15%; right: 8%; animation-duration: 18s; }
+    .floating-notes span:nth-child(3) { top: 40%; left: 4%; animation-duration: 20s; }
+    .floating-notes span:nth-child(4) { top: 55%; right: 6%; animation-duration: 24s; }
+    .floating-notes span:nth-child(5) { bottom: 10%; left: 14%; animation-duration: 19s; }
+    .floating-notes span:nth-child(6) { bottom: 18%; right: 12%; animation-duration: 21s; }
+    .floating-notes span:nth-child(7) { top: 25%; left: 50%; animation-duration: 23s; }
+    .floating-notes span:nth-child(8) { bottom: 30%; right: 40%; animation-duration: 20s; }
+
+    @keyframes floatNote {
+      0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      50% {
+        transform: translate3d(20px, -80px, 0) rotate(10deg);
+      }
+      100% {
+        transform: translate3d(-20px, -160px, 0) rotate(-10deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .floating-notes span {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- Floating music icons -->
+    <div class="floating-notes" aria-hidden="true">
+      <span>♪</span>
+      <span>♫</span>
+      <span>🎷</span>
+      <span>♬</span>
+      <span>🎶</span>
+      <span>♩</span>
+      <span>🎺</span>
+      <span>𝄞</span>
+    </div>
+
+    <!-- INTRO SPLASH -->
+    <section class="intro-splash" id="home">
+      <div class="intro-orbit"></div>
+      <div class="intro-inner">
+        <div class="intro-kicker">Indian Classical Saxophone & Bansuri</div>
+        <h1 class="intro-title">Priyank&nbsp;Krishna</h1>
+        <p class="intro-subtitle">
+          A-Grade All India Radio artist weaving the voice of Hindustani classical music
+          through the saxophone and bamboo flute – from Prayagraj to stages across India and the world.
+        </p>
+        <div class="intro-divider"></div>
+        <a href="#top" class="intro-cta">
+          <span>Enter the music</span>
+          <span class="intro-cta-icon">↓</span>
+        </a>
+      </div>
+      <a href="#top" class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+      </a>
+    </section>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="nav-inner">
+        <div class="brand">
+          <div class="brand-logo">PK</div>
+          <div>
+            <div class="brand-text-title">Priyank Krishna</div>
+            <div class="brand-text-sub">Indian Classical Saxophonist</div>
+          </div>
+        </div>
+
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#tours">Concerts</a>
+          <a href="#events">Events</a>
+          <a href="#media">Media</a>
+          <a href="#music">Music</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#about">About</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#tours">Concerts</a>
+        <a href="#events">Events</a>
+        <a href="#media">Media</a>
+        <a href="#music">Music</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div>
+            <div class="hero-kicker">
+              <span class="hero-kicker-dot"></span>
+              Live • Classical • Contemporary
+            </div>
+            <h1 class="hero-title">
+              <span class="hero-gradient-text">Priyank Krishna</span><br />
+              Indian Classical Saxophonist<br />
+              & Bamboo Flute (Bansuri) Player
+            </h1>
+            <p class="hero-subtitle">
+              Born in a musical family in Prayagraj and trained in Hindustani classical music from an early age, Priyank blends the melodic depth of
+              <span class="mono">Gayaki</span> with the expressive voice of the saxophone and bamboo flute, crafting immersive concert experiences across India and abroad.
+            </p>
+            <div class="hero-meta">
+              <div class="meta-pill">
+                <span class="meta-pill-dot"></span>
+                A-Grade Artist, All India Radio
+              </div>
+              <div class="meta-pill">
+                <span class="meta-pill-dot"></span>
+                “Yuva Samrat Puraskar”, “Sangeet Kala Gaurav”, “Naad Sadhak”
+              </div>
+              <div class="meta-pill">
+                <span class="meta-pill-dot"></span>
+                Performed at Berklee College of Music, Boston (USA)
+              </div>
+            </div>
+            <div class="hero-buttons">
+              <a href="#events" class="btn-primary">
+                <span>Upcoming Events</span>
+                <span class="btn-icon">▶</span>
+              </a>
+              <a href="#contact" class="btn-ghost">
+                <span>Book for Concert</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-orbit"></div>
+            <div class="hero-photo-card card-3d">
+              <!-- Replace hero-image.jpg with your own image -->
+              <img src="hero-image.jpg" alt="Priyank Krishna performing live" />
+              <div class="hero-photo-overlay"></div>
+              <div class="hero-tag">
+                <span class="dot"></span>
+                Live in Concert
+              </div>
+            </div>
+            <div class="hero-floating-pill">
+              100+ Festivals • India & Abroad
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">About</div>
+            <h2 class="section-title">Biography</h2>
+            <p class="section-subtitle">
+              A journey from Prayagraj to world stages, carrying the soul of Indian classical music through the saxophone and bamboo flute.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-text">
+              <p>
+                Born in a musician family of Prayagraj, Priyank Krishna inherited music from his illustrious father Pt. Ram Krishna, a prominent clarinet player of the country. He began his formal training in Hindustani classical music at a very young age and has since developed a unique voice on the saxophone and bamboo flute.
+              </p>
+              <p>
+                In his concerts, Priyank explores the melodic richness of the
+                <em>Gayaki ang</em>, while using the tonal possibilities of the saxophone to present <em>tans</em>, <em>meends</em> and intricate improvisations. His performances have been appreciated by audiences, connoisseurs and music critics alike.
+              </p>
+              <p>
+                Priyank is an A-Grade artist of All India Radio in Hindustani Classical Music, recipient of the Government of India Scholarship for Young Artistes, and has served as an academic counsellor (Flute) with IGNOU, New Delhi.
+              </p>
+
+              <div class="about-highlight-grid">
+                <div class="about-stat">
+                  <strong>15+ Years</strong>
+                  of professional performances and teaching.
+                </div>
+                <div class="about-stat">
+                  <strong>India & Abroad</strong>
+                  Concerts and festivals across multiple countries.
+                </div>
+                <div class="about-stat">
+                  <strong>Awards</strong>
+                  National and university-level awards and recognitions.
+                </div>
+              </div>
+            </div>
+
+            <div class="card-3d tour-card">
+              <h4>Academic & Artistic Highlights</h4>
+              <p>
+                • A-Grade Saxophonist in Hindustani Classical Music by All India Radio<br />
+                • “Yuva Samrat Puraskar”, “Sangeet Kala Gaurav” and “Naad Sadhak” awardee<br />
+                • Scholarship for Young Artiste – Ministry of HRD, New Delhi<br />
+                • Lecture-demonstration at Berklee College of Music, Boston (USA)<br />
+                • Academic Counsellor (Flute), IGNOU, New Delhi<br />
+                • UGC-NET qualified with Masters in Political Science and Music
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS -->
+      <section id="achievements">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">Milestones</div>
+            <h2 class="section-title">Selected Achievements</h2>
+            <p class="section-subtitle">
+              Recognitions and honours from the world of Indian classical music.
+            </p>
+          </div>
+
+          <div class="achievements-grid">
+            <ul class="achievement-list">
+              <li>Approved as an “A Grade” Saxophonist in Hindustani Classical Music by All India Radio.</li>
+              <li>Recipient of awards such as “Yuva Samrat Puraskar”, “Sangeet Kala Gaurav” and “Naad Sadhak”.</li>
+              <li>Scholarship for Young Artiste from the Ministry of HRD, New Delhi.</li>
+              <li>Lecture-demonstration at Berklee College of Music, Boston (USA).</li>
+              <li>Academic Counsellor of Flute for IGNOU, New Delhi.</li>
+              <li>Honoured by universities and cultural institutions including Punjabi University, Patiala.</li>
+              <li>Jury member for state-level music competitions.</li>
+              <li>UGC-NET qualified with advanced degrees in Political Science and Music.</li>
+            </ul>
+
+            <div class="achievement-highlight card-3d">
+              <strong>Concert Recognition</strong>
+              Priyank is invited to prestigious music conferences, youth festivals and cultural series across India, often representing Indian classical saxophone on leading stages and festivals.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOURS / PLACES -->
+      <section id="tours">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">Concert Map</div>
+            <h2 class="section-title">Major Performances</h2>
+            <p class="section-subtitle">
+              Festivals, cities and countries where the music has travelled.
+            </p>
+          </div>
+
+          <div class="tours-grid">
+            <div>
+              <div class="tour-tags">
+                <div class="tour-tag">LearnQuest Music Conference, Boston (USA)</div>
+                <div class="tour-tag">Baby Grand Jazz Fest, Hartford (USA)</div>
+                <div class="tour-tag">Berklee College of Music, Boston (USA)</div>
+                <div class="tour-tag">Raga Inc., Fort Myers (USA)</div>
+                <div class="tour-tag">Summer Solstice Festival (USA)</div>
+                <div class="tour-tag">Ethno World Music Festival, Germany</div>
+                <div class="tour-tag">Yoga Festival – Odessa & Poltava (Ukraine)</div>
+                <div class="tour-tag">Embassy of India, Kyiv (Ukraine)</div>
+                <div class="tour-tag">Shared History Festival, Johannesburg (South Africa)</div>
+                <div class="tour-tag">International Festival, Berlin (Germany)</div>
+                <div class="tour-tag">Madagascar – Antananarivo</div>
+                <div class="tour-tag">Thailand Music Festival</div>
+                <div class="tour-tag">Draunoser Festival, Belgium</div>
+                <div class="tour-tag">Ramotsav, Ayodhya</div>
+                <div class="tour-tag">Azadi ka Amrit Mahotsav Series, New Delhi</div>
+                <div class="tour-tag">U.P. Sangeet Natak Akademi Festivals</div>
+                <div class="tour-tag">Youth Festival, Jhansi</div>
+                <div class="tour-tag">Taj Mahotsav, Agra</div>
+                <div class="tour-tag">Benaras & Prayagraj Festivals</div>
+                <div class="tour-tag">Gandhi Bhawan, Chandigarh</div>
+              </div>
+            </div>
+
+            <div class="card-3d tour-card">
+              <h4>Festival Presence</h4>
+              <p>
+                From intimate baithak-style concerts to large festival stages, Priyank presents meditative ragas, light classical compositions and collaborative fusion sets for diverse audiences around the world.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- UPCOMING EVENTS -->
+      <section id="events">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">Calendar</div>
+            <h2 class="section-title">Upcoming Events</h2>
+            <p class="section-subtitle">
+              Selected upcoming concerts and special appearances.
+            </p>
+          </div>
+
+          <div class="events-grid">
+            <article class="event-card">
+              <div class="event-status">Featured</div>
+              <div class="event-date">April 12, 2026 • Evening</div>
+              <div class="event-title">Raga Evening – Saxophone & Bansuri Recital</div>
+              <div class="event-venue">India Habitat Centre, New Delhi</div>
+              <div class="event-meta-line">Presented by: [Organizer Name]</div>
+              <div class="event-meta-line">Tickets / Invite: [Link or Details]</div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-date">May 04, 2026 • Online</div>
+              <div class="event-title">Lecture-Demonstration: Voice of Saxophone in Hindustani Music</div>
+              <div class="event-venue">Hosted on: [Platform]</div>
+              <div class="event-meta-line">For students, teachers and music lovers.</div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-date">June 18, 2026 • Festival</div>
+              <div class="event-title">World Music Night</div>
+              <div class="event-venue">[City / Country]</div>
+              <div class="event-meta-line">Collaborative performance with guest artists.</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- MEDIA & REVIEWS -->
+      <section id="media">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">Media</div>
+            <h2 class="section-title">Media &amp; Reviews</h2>
+            <p class="section-subtitle">
+              Highlights from press coverage, interviews and audience responses.
+            </p>
+          </div>
+
+          <div class="media-grid">
+            <div>
+              <div class="press-logos">
+                <span class="press-pill">All India Radio</span>
+                <span class="press-pill">Music Web Portals</span>
+                <span class="press-pill">Festival Notes</span>
+                <span class="press-pill">Print & Digital Media</span>
+              </div>
+
+              <div class="review-list">
+                <div class="review-card">
+                  <div class="review-quote">
+                    “Priyank Krishna’s saxophone carries the sensitivity of a vocalist – every phrase blooms like an <em>aalaap</em> yet holds the power of a wind instrument.”
+                  </div>
+                  <div class="review-source">Music Critic</div>
+                  <div class="review-meta">Feature on contemporary Hindustani instrumentalists.</div>
+                </div>
+
+                <div class="review-card">
+                  <div class="review-quote">
+                    “A rare combination of clarity, <em>gayaki ang</em> and effortless command over both saxophone and bansuri. The audience stayed with every note till the final <em>jhala</em>.”
+                  </div>
+                  <div class="review-source">Festival Organiser</div>
+                  <div class="review-meta">Post-concert note from a classical music festival.</div>
+                </div>
+
+                <div class="review-card">
+                  <div class="review-quote">
+                    “Priyank introduced the saxophone as a living, breathing voice within Hindustani classical music – students left inspired to explore beyond conventional instruments.”
+                  </div>
+                  <div class="review-source">Academic Host</div>
+                  <div class="review-meta">From a university lecture-demonstration.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-3d media-card">
+              <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; margin-bottom: 0.5rem;">
+                Featured Media
+              </h4>
+              <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 0.7rem;">
+                Selected digital performances and stories:
+              </p>
+              <p style="font-size: 0.86rem; color: var(--accent2);" class="mono">
+                [YouTube] &nbsp;Raga Performance – International Festival<br />
+                [Article] &nbsp;“The Saxophone in Hindustani Classical Music”<br />
+                [Interview] &nbsp;Conversations on Music & Journey
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MUSIC -->
+      <section id="music">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">Listen</div>
+            <h2 class="section-title">Selected Recordings</h2>
+            <p class="section-subtitle">
+              A few sonic snapshots from concerts and studio sessions.
+            </p>
+          </div>
+
+          <div class="audio-wrapper">
+            <div class="audio-description">
+              <p>
+                Experience the meditative depth of ragas, lyrical light classical pieces and collaborative works featuring saxophone and bansuri.
+              </p>
+              <p>
+                Curated pieces:
+              </p>
+              <ul style="margin-left: 1.1rem; margin-top: 0.6rem; color: var(--muted); font-size: 0.9rem;">
+                <li>Raga alap and gat on saxophone.</li>
+                <li>Bhajan and light classical compositions on bamboo flute.</li>
+                <li>Ensemble and fusion arrangements with percussion and keys.</li>
+              </ul>
+            </div>
+
+            <div class="card-3d audio-player-card">
+              <div class="audio-track">
+                Raga Excerpt – Saxophone Solo
+                <audio controls>
+                  <!-- Replace track1.mp3 with your file -->
+                  <source src="track1.mp3" type="audio/mpeg" />
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+              <div class="audio-track">
+                Bansuri Bhajan / Light Classical
+                <audio controls>
+                  <!-- Replace track2.mp3 with your file -->
+                  <source src="track2.mp3" type="audio/mpeg" />
+                </audio>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section id="gallery">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">Visuals</div>
+            <h2 class="section-title">Photo Gallery</h2>
+            <p class="section-subtitle">
+              Glimpses from concerts, festivals, collaborations and awards.
+            </p>
+          </div>
+
+          <div class="gallery-grid">
+            <figure class="photo-frame">
+              <img src="gallery-01.jpg" alt="Priyank Krishna performing at a classical festival" />
+              <figcaption class="photo-caption">Festival Stage</figcaption>
+            </figure>
+
+            <figure class="photo-frame">
+              <img src="gallery-02.jpg" alt="Saxophone recital in an auditorium" />
+              <figcaption class="photo-caption">Saxophone Recital</figcaption>
+            </figure>
+
+            <figure class="photo-frame">
+              <img src="gallery-03.jpg" alt="Bansuri performance with tabla accompaniment" />
+              <figcaption class="photo-caption">Bansuri & Tabla</figcaption>
+            </figure>
+
+            <figure class="photo-frame">
+              <img src="gallery-04.jpg" alt="Receiving award on stage" />
+              <figcaption class="photo-caption">Award Ceremony</figcaption>
+            </figure>
+
+            <figure class="photo-frame">
+              <img src="gallery-05.jpg" alt="International concert" />
+              <figcaption class="photo-caption">International Concert</figcaption>
+            </figure>
+
+            <figure class="photo-frame">
+              <img src="gallery-06.jpg" alt="Classical ensemble on stage" />
+              <figcaption class="photo-caption">Ensemble Performance</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">Connect</div>
+            <h2 class="section-title">Bookings &amp; Contact</h2>
+            <p class="section-subtitle">
+              Reach out for concerts, lecture-demonstrations, workshops and collaborations.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-details">
+              <div>
+                <strong>Phone</strong><br />
+                +91-97842-00174
+              </div>
+              <div>
+                <strong>Email</strong><br />
+                <a href="mailto:flute.priyank@gmail.com">flute.priyank@gmail.com</a>
+              </div>
+              <div>
+                <strong>Website</strong><br />
+                <a href="http://www.priyankkrishna.weebly.com" target="_blank" rel="noreferrer">
+                  www.priyankkrishna.weebly.com
+                </a>
+              </div>
+              <div>
+                <strong>Social</strong><br />
+                <span class="mono">[YouTube] [Instagram] [Facebook] [Spotify]</span>
+              </div>
+            </div>
+
+            <form class="card-3d contact-card">
+              <div class="input-row">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" type="text" placeholder="Your full name" />
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" type="email" placeholder="your@email.com" />
+                </div>
+              </div>
+
+              <div class="input-row">
+                <div class="field">
+                  <label for="org">Organisation / Festival</label>
+                  <input id="org" type="text" placeholder="Presenter / Institution" />
+                </div>
+                <div class="field">
+                  <label for="city">City / Country</label>
+                  <input id="city" type="text" placeholder="Event location" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="details">Message / Event Details</label>
+                <textarea
+                  id="details"
+                  placeholder="Dates, venue, type of concert or collaboration."
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary">
+                <span>Send Message</span>
+                <span class="btn-icon">↗</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div>
+          © <span id="year"></span> Priyank Krishna. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      mobileMenu.classList.toggle("mobile-open");
+    });
+
+    // Close mobile menu when a link is clicked
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        mobileMenu.classList.remove("mobile-open");
+      });
+    });
+  </script>
+</body>
+</html>
