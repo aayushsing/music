@@ -44,6 +44,7 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden; /* prevent horizontal scroll */
     }
 
     body {
@@ -53,7 +54,7 @@
       color: var(--text);
       min-height: 100vh;
       line-height: 1.6;
-      overflow-x: hidden;
+      overflow-x: hidden; /* prevent horizontal scroll */
     }
 
     h1, h2, h3, h4, h5, h6,
@@ -163,12 +164,12 @@
 
     .intro-splash {
       position: relative;
-      min-height: 100vh;
+      min-height: 100dvh; /* better on mobile than 100vh */
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 0 1.4rem;
+      padding: 0 1.4rem 80px; /* extra bottom space for handle on mobile */
       overflow: hidden;
       background:
         radial-gradient(circle at top, rgba(246, 182, 91, 0.12), transparent 55%),
@@ -212,6 +213,7 @@
       animation: fadeUp 1.2s ease-out forwards;
       opacity: 0;
       transform: translateY(18px);
+      padding-top: env(safe-area-inset-top, 0px);
     }
 
     .intro-kicker {
@@ -224,7 +226,7 @@
     }
 
     .intro-title {
-      font-size: clamp(3.1rem, 5.4vw, 4rem);
+      font-size: clamp(2.6rem, 5.4vw, 4rem);
       line-height: 1.02;
       margin-bottom: 0.6rem;
       background: linear-gradient(130deg, #ffffff, #f1e8d4, #f6b65b);
@@ -1577,6 +1579,12 @@
       .floating-notes span {
         font-size: 14px;
       }
+      .intro-title {
+        font-size: clamp(2.2rem, 9vw, 3rem);
+      }
+      .intro-subtitle {
+        font-size: 0.95rem;
+      }
     }
 
     /* EVENT FLASH NOTIFICATION OVERLAY */
@@ -1588,17 +1596,21 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 0.8rem; /* ensures spacing on small screens */
       z-index: 120;
     }
 
     .event-notice-card {
       max-width: 420px;
-      width: calc(100% - 2.4rem);
-      padding: 1.6rem 1.7rem 1.4rem;
+      width: 100%;
+      padding: 1.4rem 1.5rem 1.2rem;
       position: relative;
       background: radial-gradient(circle at top left, rgba(246, 182, 91, 0.22), #050816 70%);
       animation: noticePop 0.55s cubic-bezier(0.22, 0.9, 0.35, 1.2) forwards;
       overflow: hidden;
+      max-height: 90vh;       /* IMPORTANT: fit in screen */
+      overflow-y: auto;       /* scroll inside if content is big */
+      box-sizing: border-box;
     }
 
     .event-notice-card::before {
@@ -1688,6 +1700,18 @@
         opacity: 0.4;
       }
     }
+
+    @media (max-width: 480px) {
+      .event-notice-card {
+        padding: 1.1rem 1.1rem 1rem;
+      }
+      .event-notice-card h3 {
+        font-size: 1.05rem;
+      }
+      .event-notice-card p {
+        font-size: 0.86rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1711,6 +1735,48 @@
 
     <!-- Floating music emojis -->
     <div class="floating-notes" aria-hidden="true">
+      <span>♪</span>
+      <span>♫</span>
+      <span>🎷</span>
+      <span>♬</span>
+      <span>🎶</span>
+      <span>♩</span>
+      <span>🎺</span>
+      <span>𝄞</span>
+      <span>🎻</span>
+      <span>🥁</span>
+      <span>🎼</span>
+      <span>🎹</span>
+      <span>🎵</span>
+      <span>🎧</span>
+      <span>♪</span>
+      <span>♫</span>
+      <span>🎷</span>
+      <span>♬</span>
+      <span>🎶</span>
+      <span>♩</span>
+      <span>🎺</span>
+      <span>𝄞</span>
+      <span>🎻</span>
+      <span>🥁</span>
+      <span>🎼</span>
+      <span>🎹</span>
+      <span>🎵</span>
+      <span>🎧</span>
+      <span>♪</span>
+      <span>♫</span>
+      <span>🎷</span>
+      <span>♬</span>
+      <span>🎶</span>
+      <span>♩</span>
+      <span>🎺</span>
+      <span>𝄞</span>
+      <span>🎻</span>
+      <span>🥁</span>
+      <span>🎼</span>
+      <span>🎹</span>
+      <span>🎵</span>
+      <span>🎧</span>
       <span>♪</span>
       <span>♫</span>
       <span>🎷</span>
@@ -2389,6 +2455,7 @@
                   </a>
                 </div>
                 <div style="font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem;">
+                
                 </div>
               </div>
             </div>
