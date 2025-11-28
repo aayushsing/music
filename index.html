@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
 
@@ -61,6 +61,11 @@
     .section-title {
       font-family: "Cormorant Garamond", "Times New Roman", serif;
       letter-spacing: 0.04em;
+    }
+
+    .intro-title,
+    .hero-title {
+      font-family: "Playfair Display", "Cormorant Garamond", serif;
     }
 
     .page-wrapper {
@@ -154,7 +159,7 @@
       opacity: 1;
     }
 
-    /* INTRO SPLASH */
+    /* INTRO SPLASH (page 1 with fold-up effect) */
 
     .intro-splash {
       position: relative;
@@ -166,9 +171,38 @@
       padding: 0 1.4rem;
       overflow: hidden;
       background:
-        radial-gradient(circle at top, rgba(246, 182, 91, 0.1), transparent 55%),
-        radial-gradient(circle at bottom, rgba(55, 224, 255, 0.08), transparent 55%),
+        radial-gradient(circle at top, rgba(246, 182, 91, 0.12), transparent 55%),
+        radial-gradient(circle at bottom, rgba(55, 224, 255, 0.10), transparent 55%),
         #050816;
+      border-bottom-left-radius: 32px;
+      border-bottom-right-radius: 32px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+      transform-origin: bottom center;
+      transform-style: preserve-3d;
+      will-change: transform, opacity;
+      z-index: 50;
+    }
+
+    .intro-splash::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 140px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+      pointer-events: none;
+    }
+
+    /* BIG SAXOPHONE EMOJI BACKGROUND FOR FIRST PAGE */
+    .intro-sax-bg {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: min(65vw, 65vh);
+      color: rgba(255, 255, 255, 0.04);
+      z-index: 0;
+      pointer-events: none;
     }
 
     .intro-inner {
@@ -190,13 +224,25 @@
     }
 
     .intro-title {
-      font-size: clamp(3rem, 5vw, 3.8rem);
+      font-size: clamp(3.1rem, 5.4vw, 4rem);
       line-height: 1.02;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(120deg, #ffffff, #f6e7d4, #f6b65b);
+      margin-bottom: 0.6rem;
+      background: linear-gradient(130deg, #ffffff, #f1e8d4, #f6b65b);
       -webkit-background-clip: text;
       color: transparent;
-      text-shadow: 0 18px 45px rgba(0, 0, 0, 0.95);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      /* 3D look */
+      text-shadow:
+        0 2px 0 #f1d39a,
+        0 6px 0 #c7933d,
+        0 14px 30px rgba(0, 0, 0, 0.9);
+      transform: translateZ(20px);
+    }
+
+    .intro-title span {
+      display: inline-block;
+      transform: perspective(900px) rotateX(8deg);
     }
 
     .intro-subtitle {
@@ -207,11 +253,11 @@
     }
 
     .intro-divider {
-      width: 80px;
-      height: 1px;
+      width: 90px;
+      height: 2px;
       margin: 0 auto 1.7rem;
       background: linear-gradient(to right, transparent, var(--accent), transparent);
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
     .intro-cta {
@@ -260,49 +306,56 @@
       pointer-events: none;
       filter: blur(2px);
       animation: slowPulse 12s ease-in-out infinite alternate;
+      z-index: 0;
     }
 
-    .scroll-indicator {
+    /* Fold animation state */
+    .intro-splash.intro-folded {
+      animation: foldUp 1.1s cubic-bezier(0.26, 0.78, 0.41, 1) forwards;
+      pointer-events: none;
+    }
+
+    /* Pull-up hand handle */
+
+    .pull-handle {
       position: absolute;
       left: 50%;
-      bottom: 40px;
+      bottom: 18px;
       transform: translateX(-50%);
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 0.3rem;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .pull-hand-circle {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: rgba(5, 8, 22, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9);
+      animation: handleBounce 2s ease-in-out infinite;
+    }
+
+    .pull-hand-circle span {
+      font-size: 1.5rem;
+    }
+
+    .pull-text {
       font-size: 0.7rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--muted);
     }
 
-    .scroll-indicator span {
-      margin-bottom: 0.4rem;
-    }
-
-    .scroll-mouse {
-      width: 22px;
-      height: 34px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding-top: 6px;
-      overflow: hidden;
-    }
-
-    .scroll-wheel {
-      width: 4px;
-      height: 8px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.9);
-      animation: scrollWheel 1.6s ease-in-out infinite;
-    }
-
-    @keyframes scrollWheel {
-      0% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(10px); opacity: 0; }
+    @keyframes handleBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
     }
 
     @keyframes fadeUp {
@@ -315,6 +368,22 @@
     @keyframes slowPulse {
       0% { opacity: 0.4; transform: scale(1); }
       100% { opacity: 0.8; transform: scale(1.05); }
+    }
+
+    /* Fold-up keyframes */
+    @keyframes foldUp {
+      0% {
+        transform: perspective(1200px) rotateX(0deg) translateY(0);
+        opacity: 1;
+      }
+      60% {
+        transform: perspective(1200px) rotateX(-75deg) translateY(-10vh);
+        opacity: 1;
+      }
+      100% {
+        transform: perspective(1200px) rotateX(-90deg) translateY(-40vh);
+        opacity: 0;
+      }
     }
 
     /* NAVBAR + MOBILE MENU */
@@ -414,7 +483,6 @@
       width: 100%;
     }
 
-    /* Hamburger icon */
     .hamburger {
       display: none;
       width: 26px;
@@ -432,7 +500,6 @@
       transition: 0.3s;
     }
 
-    /* Mobile menu panel */
     .mobile-menu {
       display: none;
       flex-direction: column;
@@ -475,7 +542,6 @@
       .nav-links {
         display: none;
       }
-
       .hamburger {
         display: flex;
       }
@@ -631,6 +697,12 @@
       font-size: 0.7rem;
     }
 
+    /* smaller button for popup */
+    .btn-small {
+      padding: 0.64rem 1.1rem;
+      font-size: 0.78rem;
+    }
+
     .hero-visual {
       position: relative;
       min-height: 260px;
@@ -695,8 +767,8 @@
       padding: 0.5rem 0.9rem;
       border-radius: 999px;
       font-size: 0.7rem;
-      letter-spacing: 0.14em;
       text-transform: uppercase;
+      letter-spacing: 0.14em;
       background: rgba(5, 8, 22, 0.86);
       backdrop-filter: blur(14px);
       border: 1px solid rgba(255, 255, 255, 0.22);
@@ -894,6 +966,206 @@
     .tour-card p {
       font-size: 0.9rem;
       color: var(--muted);
+    }
+
+    /* IMPACT MAP & GRAPH */
+
+    #impact-map {
+      padding-top: 0;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2.4rem;
+      align-items: stretch;
+    }
+
+    @media (max-width: 900px) {
+      .impact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .concert-stats p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 1.1rem;
+    }
+
+    .concert-numbers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .concert-number-card {
+      min-width: 130px;
+      padding: 0.9rem 1rem;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: radial-gradient(circle at top left, rgba(246, 182, 91, 0.18), #050816 70%);
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .concert-number-card strong {
+      display: block;
+      font-size: 1.4rem;
+      color: var(--text);
+      font-family: "Playfair Display", serif;
+      margin-bottom: 0.1rem;
+    }
+
+    .concert-bars {
+      display: grid;
+      gap: 0.65rem;
+      margin-top: 0.5rem;
+    }
+
+    .bar-row {
+      display: grid;
+      gap: 0.16rem;
+      font-size: 0.78rem;
+    }
+
+    .bar-label {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+    }
+
+    .bar-track {
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
+      width: 0;
+      animation: growBar 1.8s ease-out forwards;
+      animation-delay: 0.2s;
+    }
+
+    .bar-row:nth-child(2) .bar-fill { animation-delay: 0.35s; }
+    .bar-row:nth-child(3) .bar-fill { animation-delay: 0.5s; }
+
+    @keyframes growBar {
+      from { width: 0; }
+      to { width: var(--w); }
+    }
+
+    .world-map-card {
+      padding: 1.4rem 1.5rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .world-map {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 18px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(55, 224, 255, 0.35), transparent 60%),
+        radial-gradient(circle at 75% 60%, rgba(246, 182, 91, 0.35), transparent 60%),
+        radial-gradient(circle at 40% 80%, rgba(144, 238, 144, 0.28), transparent 60%),
+        #041126;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .world-map::before {
+      content: "";
+      position: absolute;
+      inset: 16%;
+      border-radius: 999px;
+      border: 1px dashed rgba(255, 255, 255, 0.32);
+      opacity: 0.9;
+    }
+
+    .world-map::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(0,0,0,0.4), transparent 70%);
+      mix-blend-mode: soft-light;
+      opacity: 0.25;
+    }
+
+    .map-dot {
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--accent2);
+      box-shadow: 0 0 18px rgba(55, 224, 255, 0.95);
+      animation: dotPulse 2.2s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    .map-dot-india { left: 56%; top: 53%; }
+    .map-dot-europe { left: 45%; top: 35%; animation-delay: 0.3s; }
+    .map-dot-usa { left: 24%; top: 42%; animation-delay: 0.6s; }
+    .map-dot-africa { left: 50%; top: 60%; animation-delay: 0.9s; }
+    .map-dot-asia { left: 63%; top: 40%; animation-delay: 1.2s; }
+
+    .map-path {
+      position: absolute;
+      left: 24%;
+      top: 42%;
+      width: 40%;
+      height: 30%;
+      border-radius: 999px;
+      border: 1px dashed rgba(255, 255, 255, 0.4);
+      transform: rotate(-12deg);
+      animation: pathGlow 4s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes dotPulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+      50% {
+        transform: scale(1.8);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pathGlow {
+      0% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+      100% { opacity: 0.3; }
+    }
+
+    .map-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .map-legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .map-legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent2);
+      box-shadow: 0 0 10px rgba(55, 224, 255, 0.8);
     }
 
     /* EVENTS */
@@ -1196,6 +1468,35 @@
       margin-top: 0.4rem;
     }
 
+    /* SOCIAL ICONS (image-based) */
+
+    .social-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.35rem;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social-icons img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.7));
+      opacity: 0.9;
+      transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    }
+
+    .social-icons a:hover img {
+      transform: translateY(-2px) scale(1.05);
+      opacity: 1;
+    }
+
     /* FOOTER */
 
     footer {
@@ -1222,7 +1523,7 @@
         "Liberation Mono", "Courier New", monospace;
     }
 
-    /* FLOATING MUSIC ICONS BACKGROUND */
+    /* FLOATING MUSIC EMOJIS */
 
     .floating-notes {
       position: fixed;
@@ -1248,6 +1549,12 @@
     .floating-notes span:nth-child(6) { bottom: 18%; right: 12%; animation-duration: 21s; }
     .floating-notes span:nth-child(7) { top: 25%; left: 50%; animation-duration: 23s; }
     .floating-notes span:nth-child(8) { bottom: 30%; right: 40%; animation-duration: 20s; }
+    .floating-notes span:nth-child(9) { top: 8%; left: 70%; animation-duration: 26s; }
+    .floating-notes span:nth-child(10){ bottom: 8%; right: 20%; animation-duration: 22s; }
+    .floating-notes span:nth-child(11){ top: 60%; left: 20%; animation-duration: 25s; }
+    .floating-notes span:nth-child(12){ top: 72%; right: 15%; animation-duration: 19s; }
+    .floating-notes span:nth-child(13){ top: 32%; right: 30%; animation-duration: 27s; }
+    .floating-notes span:nth-child(14){ bottom: 22%; left: 35%; animation-duration: 24s; }
 
     @keyframes floatNote {
       0% {
@@ -1271,12 +1578,138 @@
         font-size: 14px;
       }
     }
+
+    /* EVENT FLASH NOTIFICATION OVERLAY */
+
+    .event-notice-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.68);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 120;
+    }
+
+    .event-notice-card {
+      max-width: 420px;
+      width: calc(100% - 2.4rem);
+      padding: 1.6rem 1.7rem 1.4rem;
+      position: relative;
+      background: radial-gradient(circle at top left, rgba(246, 182, 91, 0.22), #050816 70%);
+      animation: noticePop 0.55s cubic-bezier(0.22, 0.9, 0.35, 1.2) forwards;
+      overflow: hidden;
+    }
+
+    .event-notice-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 2px solid transparent;
+      background: linear-gradient(120deg, #f6b65b, #ff7c4a, #37e0ff, #f6b65b) border-box;
+      mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+      mask-composite: exclude;
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      animation: flashBorder 2.4s linear infinite;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .event-notice-eyebrow {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent2);
+      margin-bottom: 0.4rem;
+    }
+
+    .event-notice-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .event-notice-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .event-close {
+      position: absolute;
+      right: 0.65rem;
+      top: 0.65rem;
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: rgba(5, 8, 22, 0.96);
+      color: var(--muted);
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      line-height: 1;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
+      transition: background 0.2s, transform 0.2s, color 0.2s;
+    }
+
+    .event-close:hover {
+      background: rgba(246, 182, 91, 0.98);
+      color: #050816;
+      transform: translateY(-1px);
+    }
+
+    @keyframes noticePop {
+      0% {
+        opacity: 0;
+        transform: translateY(16px) scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes flashBorder {
+      0% {
+        opacity: 0.4;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.4;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="page-wrapper">
 
-    <!-- Floating music icons -->
+    <!-- Flash Upcoming Event Notification -->
+    <div class="event-notice-overlay" id="eventNotice">
+      <div class="event-notice-card card-3d">
+        <button class="event-close" id="eventClose" aria-label="Close notification">×</button>
+        <div class="event-notice-eyebrow">Upcoming Event</div>
+        <h3>Raga Evening – Saxophone &amp; Bansuri Recital</h3>
+        <p>
+          April 12, 2026 • India Habitat Centre, New Delhi<br />
+          Experience an immersive evening of Hindustani classical saxophone and bansuri.
+        </p>
+        <a href="#events" class="btn-primary btn-small">
+          <span>View full details</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Floating music emojis -->
     <div class="floating-notes" aria-hidden="true">
       <span>♪</span>
       <span>♫</span>
@@ -1286,14 +1719,93 @@
       <span>♩</span>
       <span>🎺</span>
       <span>𝄞</span>
+      <span>🎻</span>
+      <span>🥁</span>
+      <span>🎼</span>
+      <span>🎹</span>
+      <span>🎵</span>
+      <span>🎧</span>
+      <span>♪</span>
+      <span>♫</span>
+      <span>🎷</span>
+      <span>♬</span>
+      <span>🎶</span>
+      <span>♩</span>
+      <span>🎺</span>
+      <span>𝄞</span>
+      <span>🎻</span>
+      <span>🥁</span>
+      <span>🎼</span>
+      <span>🎹</span>
+      <span>🎵</span>
+      <span>🎧</span>
+      <span>♪</span>
+      <span>♫</span>
+      <span>🎷</span>
+      <span>♬</span>
+      <span>🎶</span>
+      <span>♩</span>
+      <span>🎺</span>
+      <span>𝄞</span>
+      <span>🎻</span>
+      <span>🥁</span>
+      <span>🎼</span>
+      <span>🎹</span>
+      <span>🎵</span>
+      <span>🎧</span>
+      <span>♪</span>
+      <span>♫</span>
+      <span>🎷</span>
+      <span>♬</span>
+      <span>🎶</span>
+      <span>♩</span>
+      <span>🎺</span>
+      <span>𝄞</span>
+      <span>🎻</span>
+      <span>🥁</span>
+      <span>🎼</span>
+      <span>🎹</span>
+      <span>🎵</span>
+      <span>🎧</span>
+      <span>♪</span>
+      <span>♫</span>
+      <span>🎷</span>
+      <span>♬</span>
+      <span>🎶</span>
+      <span>♩</span>
+      <span>🎺</span>
+      <span>𝄞</span>
+      <span>🎻</span>
+      <span>🥁</span>
+      <span>🎼</span>
+      <span>🎹</span>
+      <span>🎵</span>
+      <span>🎧</span>
+      <span>♪</span>
+      <span>♫</span>
+      <span>🎷</span>
+      <span>♬</span>
+      <span>🎶</span>
+      <span>♩</span>
+      <span>🎺</span>
+      <span>𝄞</span>
+      <span>🎻</span>
+      <span>🥁</span>
+      <span>🎼</span>
+      <span>🎹</span>
+      <span>🎵</span>
+      <span>🎧</span>
     </div>
 
-    <!-- INTRO SPLASH -->
+    <!-- INTRO SPLASH (Page 1 with fold effect) -->
     <section class="intro-splash" id="home">
       <div class="intro-orbit"></div>
+      <div class="intro-sax-bg" aria-hidden="true">🎷</div>
       <div class="intro-inner">
         <div class="intro-kicker">Indian Classical Saxophone & Bansuri</div>
-        <h1 class="intro-title">Priyank&nbsp;Krishna</h1>
+        <h1 class="intro-title">
+          <span>Priyank&nbsp;Krishna</span>
+        </h1>
         <p class="intro-subtitle">
           A-Grade All India Radio artist weaving the voice of Hindustani classical music
           through the saxophone and bamboo flute – from Prayagraj to stages across India and the world.
@@ -1304,12 +1816,14 @@
           <span class="intro-cta-icon">↓</span>
         </a>
       </div>
-      <a href="#top" class="scroll-indicator">
-        <span>Scroll</span>
-        <div class="scroll-mouse">
-          <div class="scroll-wheel"></div>
+
+      <!-- Pull-up hand handle -->
+      <div class="pull-handle" id="pullHandle">
+        <div class="pull-hand-circle">
+          <span>🤚</span>
         </div>
-      </a>
+        <div class="pull-text">Pull up / Swipe up</div>
+      </div>
     </section>
 
     <!-- NAVBAR -->
@@ -1327,6 +1841,7 @@
           <a href="#about">About</a>
           <a href="#achievements">Achievements</a>
           <a href="#tours">Concerts</a>
+          <a href="#impact-map">Concert Map</a>
           <a href="#events">Events</a>
           <a href="#media">Media</a>
           <a href="#music">Music</a>
@@ -1345,6 +1860,7 @@
         <a href="#about">About</a>
         <a href="#achievements">Achievements</a>
         <a href="#tours">Concerts</a>
+        <a href="#impact-map">Concert Map</a>
         <a href="#events">Events</a>
         <a href="#media">Media</a>
         <a href="#music">Music</a>
@@ -1435,7 +1951,7 @@
                 <em>Gayaki ang</em>, while using the tonal possibilities of the saxophone to present <em>tans</em>, <em>meends</em> and intricate improvisations. His performances have been appreciated by audiences, connoisseurs and music critics alike.
               </p>
               <p>
-                Priyank is an A-Grade artist of All India Radio in Hindustani Classical Music, recipient of the Government of India Scholarship for Young Artistes, and has served as an academic counsellor (Flute) with IGNOU, New Delhi.
+                Priyank is an A-Grade artist of All India Radio in Hindustani classical music, recipient of the Government of India Scholarship for Young Artistes, and has served as an academic counsellor (Flute) with IGNOU, New Delhi.
               </p>
 
               <div class="about-highlight-grid">
@@ -1462,6 +1978,7 @@
                 • Scholarship for Young Artiste – Ministry of HRD, New Delhi<br />
                 • Lecture-demonstration at Berklee College of Music, Boston (USA)<br />
                 • Academic Counsellor (Flute), IGNOU, New Delhi<br />
+                • Honoured by universities and cultural institutions including Punjabi University, Patiala<br />
                 • UGC-NET qualified with Masters in Political Science and Music
               </p>
             </div>
@@ -1520,7 +2037,7 @@
                 <div class="tour-tag">Raga Inc., Fort Myers (USA)</div>
                 <div class="tour-tag">Summer Solstice Festival (USA)</div>
                 <div class="tour-tag">Ethno World Music Festival, Germany</div>
-                <div class="tour-tag">Yoga Festival – Odessa & Poltava (Ukraine)</div>
+                <div class="tour-tag">Yoga Festival – Odessa &amp; Poltava (Ukraine)</div>
                 <div class="tour-tag">Embassy of India, Kyiv (Ukraine)</div>
                 <div class="tour-tag">Shared History Festival, Johannesburg (South Africa)</div>
                 <div class="tour-tag">International Festival, Berlin (Germany)</div>
@@ -1532,7 +2049,7 @@
                 <div class="tour-tag">U.P. Sangeet Natak Akademi Festivals</div>
                 <div class="tour-tag">Youth Festival, Jhansi</div>
                 <div class="tour-tag">Taj Mahotsav, Agra</div>
-                <div class="tour-tag">Benaras & Prayagraj Festivals</div>
+                <div class="tour-tag">Benaras &amp; Prayagraj Festivals</div>
                 <div class="tour-tag">Gandhi Bhawan, Chandigarh</div>
               </div>
             </div>
@@ -1542,6 +2059,92 @@
               <p>
                 From intimate baithak-style concerts to large festival stages, Priyank presents meditative ragas, light classical compositions and collaborative fusion sets for diverse audiences around the world.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMPACT MAP & GRAPH -->
+      <section id="impact-map">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">Impact</div>
+            <h2 class="section-title">Global Concert Map &amp; Stats</h2>
+            <p class="section-subtitle">
+              A visual snapshot of how the music has travelled across regions, and how many concerts have been completed.
+            </p>
+          </div>
+
+          <div class="impact-grid">
+            <div class="concert-stats">
+              <p>
+                Over the years, Priyank has performed in classical festivals, university circuits, embassies and independent venues across India, Europe, Africa and the Americas.
+              </p>
+
+              <div class="concert-numbers">
+                <div class="concert-number-card">
+                  <strong>120+</strong>
+                  Total Concerts
+                </div>
+                <div class="concert-number-card">
+                  <strong>90+</strong>
+                  Concerts in India
+                </div>
+                <div class="concert-number-card">
+                  <strong>30+</strong>
+                  International Shows
+                </div>
+              </div>
+
+              <div class="concert-bars">
+                <div class="bar-row" style="--w:85%;">
+                  <div class="bar-label">
+                    <span>India &amp; South Asia</span>
+                    <span>~85%</span>
+                  </div>
+                  <div class="bar-track">
+                    <div class="bar-fill"></div>
+                  </div>
+                </div>
+                <div class="bar-row" style="--w:40%;">
+                  <div class="bar-label">
+                    <span>Europe &amp; UK</span>
+                    <span>~40%</span>
+                  </div>
+                  <div class="bar-track">
+                    <div class="bar-fill"></div>
+                  </div>
+                </div>
+                <div class="bar-row" style="--w:30%;">
+                  <div class="bar-label">
+                    <span>US, Africa &amp; Others</span>
+                    <span>~30%</span>
+                  </div>
+                  <div class="bar-track">
+                    <div class="bar-fill"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-3d world-map-card">
+              <div class="world-map">
+                <div class="map-path"></div>
+                <div class="map-dot map-dot-usa"></div>
+                <div class="map-dot map-dot-europe"></div>
+                <div class="map-dot map-dot-india"></div>
+                <div class="map-dot map-dot-africa"></div>
+                <div class="map-dot map-dot-asia"></div>
+              </div>
+              <div class="map-legend">
+                <div class="map-legend-item">
+                  <div class="map-legend-dot"></div>
+                  <span>Key concert hubs</span>
+                </div>
+                <div class="map-legend-item">
+                  <span>Dashed orbit = touring routes across regions</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1562,7 +2165,7 @@
             <article class="event-card">
               <div class="event-status">Featured</div>
               <div class="event-date">April 12, 2026 • Evening</div>
-              <div class="event-title">Raga Evening – Saxophone & Bansuri Recital</div>
+              <div class="event-title">Raga Evening – Saxophone &amp; Bansuri Recital</div>
               <div class="event-venue">India Habitat Centre, New Delhi</div>
               <div class="event-meta-line">Presented by: [Organizer Name]</div>
               <div class="event-meta-line">Tickets / Invite: [Link or Details]</div>
@@ -1602,7 +2205,7 @@
                 <span class="press-pill">All India Radio</span>
                 <span class="press-pill">Music Web Portals</span>
                 <span class="press-pill">Festival Notes</span>
-                <span class="press-pill">Print & Digital Media</span>
+                <span class="press-pill">Print &amp; Digital Media</span>
               </div>
 
               <div class="review-list">
@@ -1642,7 +2245,7 @@
               <p style="font-size: 0.86rem; color: var(--accent2);" class="mono">
                 [YouTube] &nbsp;Raga Performance – International Festival<br />
                 [Article] &nbsp;“The Saxophone in Hindustani Classical Music”<br />
-                [Interview] &nbsp;Conversations on Music & Journey
+                [Interview] &nbsp;Conversations on Music &amp; Journey
               </p>
             </div>
           </div>
@@ -1720,7 +2323,7 @@
 
             <figure class="photo-frame">
               <img src="gallery-03.jpg" alt="Bansuri performance with tabla accompaniment" />
-              <figcaption class="photo-caption">Bansuri & Tabla</figcaption>
+              <figcaption class="photo-caption">Bansuri &amp; Tabla</figcaption>
             </figure>
 
             <figure class="photo-frame">
@@ -1770,7 +2373,23 @@
               </div>
               <div>
                 <strong>Social</strong><br />
-                <span class="mono">[YouTube] [Instagram] [Facebook] [Spotify]</span>
+                <div class="social-icons">
+                  <!-- Replace # with your real links and image file names -->
+                  <a href="https://instagram.com/yourprofile" target="_blank" rel="noreferrer">
+                    <img src="instagram-icon.png" alt="Instagram" />
+                  </a>
+                  <a href="https://youtube.com/yourchannel" target="_blank" rel="noreferrer">
+                    <img src="youtube-icon.png" alt="YouTube" />
+                  </a>
+                  <a href="https://facebook.com/yourpage" target="_blank" rel="noreferrer">
+                    <img src="facebook-icon.png" alt="Facebook" />
+                  </a>
+                  <a href="https://open.spotify.com/artist/yourid" target="_blank" rel="noreferrer">
+                    <img src="spotify-icon.png" alt="Spotify" />
+                  </a>
+                </div>
+                <div style="font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem;">
+                </div>
               </div>
             </div>
 
@@ -1825,15 +2444,19 @@
   </div>
 
   <script>
+    // Dynamic year
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    // Mobile menu toggle
     const hamburger = document.getElementById("hamburger");
     const mobileMenu = document.getElementById("mobileMenu");
 
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      mobileMenu.classList.toggle("mobile-open");
-    });
+    if (hamburger) {
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileMenu.classList.toggle("mobile-open");
+      });
+    }
 
     // Close mobile menu when a link is clicked
     mobileMenu.querySelectorAll("a").forEach(link => {
@@ -1842,6 +2465,76 @@
         mobileMenu.classList.remove("mobile-open");
       });
     });
+
+    // Fold-up intro page behaviour
+    const pullHandle = document.getElementById("pullHandle");
+    const heroSection = document.getElementById("top");
+    const introSplash = document.getElementById("home");
+    let introFolded = false;
+
+    function foldIntro() {
+      if (introFolded) return;
+      introFolded = true;
+      introSplash.classList.add("intro-folded");
+
+      // After fold animation, hide intro and scroll to hero
+      setTimeout(() => {
+        introSplash.style.display = "none";
+        if (heroSection) {
+          heroSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 1150);
+    }
+
+    if (pullHandle) {
+      pullHandle.addEventListener("click", foldIntro);
+    }
+
+    // Also allow user to "pull up" by scrolling down on first page
+    let wheelListenerAdded = false;
+    if (!wheelListenerAdded) {
+      window.addEventListener("wheel", (e) => {
+        if (!introFolded && e.deltaY > 20) {
+          foldIntro();
+        }
+      }, { passive: true });
+      wheelListenerAdded = true;
+    }
+
+    // Basic touch detection to fold when user swipes up
+    let touchStartY = null;
+    window.addEventListener("touchstart", (e) => {
+      if (e.touches && e.touches.length > 0) {
+        touchStartY = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    window.addEventListener("touchmove", (e) => {
+      if (!introFolded && touchStartY !== null && e.touches && e.touches.length > 0) {
+        const currentY = e.touches[0].clientY;
+        if (touchStartY - currentY > 40) { // swipe up
+          foldIntro();
+          touchStartY = null;
+        }
+      }
+    }, { passive: true });
+
+    // Event flash popup close logic
+    const eventNotice = document.getElementById("eventNotice");
+    const eventClose = document.getElementById("eventClose");
+
+    if (eventNotice && eventClose) {
+      eventClose.addEventListener("click", () => {
+        eventNotice.style.display = "none";
+      });
+
+      // Close when click on dark area
+      eventNotice.addEventListener("click", (e) => {
+        if (e.target === eventNotice) {
+          eventNotice.style.display = "none";
+        }
+      });
+    }
   </script>
 </body>
 </html>
